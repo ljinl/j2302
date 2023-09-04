@@ -1,0 +1,22 @@
+server:
+  port: 8085
+spring:
+  datasource:
+    username: root
+    password: 123456
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:13306/e_commerce?serverTimezone=UTC
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+        namespace: a94db6be-6c5a-4c42-a176-d2605c4a00cd
+  application:
+    name: goods-service
+mybatis:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    map-underscore-to-camel-case: true
+logging:
+  level:
+    org.springframework.security: debug

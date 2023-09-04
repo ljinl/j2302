@@ -1,0 +1,44 @@
+server:
+  port: 9001
+spring:
+  application:
+    name: ecommerce-gateway
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+        namespace: a94db6be-6c5a-4c42-a176-d2605c4a00cd
+#    gateway:
+#      routes:
+##        认证中心
+#        - id: authority-center
+#          # 最终转发的路径  loadBalanced: 负载均衡
+#          # 写服务名 lb  http：ip端口
+#          uri: lb://authority-center
+#          predicates:
+#            ## http://localhost:9001/oauth/login
+#            ## http://authority-center/authority/login
+#            - Path=/authority/oauth/**
+#          filters:
+#            - StripPrefix=1
+##            - name: MyOAuth
+##        商品服务
+#        - id: goods-service
+#          uri: lb://goods-service
+#          predicates:
+#            - Path=/goods/**
+##          账户服务
+#        - id: balance-service
+#          uri: lb://balance-service
+#          predicates:
+#            - Path=/balance/**
+##            地址服务
+#        - id: address-service
+#          uri: lb://address-service
+#          predicates:
+#            - Path=/address/**
+##          订单服务
+#        - id: order-service
+#          uri: lb://order-service
+#          predicates:
+#            - Path=/order/**
